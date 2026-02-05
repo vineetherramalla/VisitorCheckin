@@ -107,7 +107,7 @@ npm run build
 
 ### Admin Login
 1. User enters email & password
-2. Frontend calls `/api/admin/login`
+2. Frontend calls `/api/login`
 3. Backend validates credentials
 4. Returns JWT token + user data
 5. Token stored in localStorage
@@ -158,7 +158,7 @@ Response: 201 Created
 
 #### Admin Login
 ```http
-POST /api/admin/login
+POST /api/login
 Content-Type: application/json
 
 {
@@ -306,7 +306,7 @@ async def create_visitor(visitor: Visitor):
     visitors_db.append(visitor_dict)
     return visitor_dict
 
-@app.post("/api/admin/login")
+@app.post("/api/login")
 async def admin_login(login: AdminLogin):
     user = admin_users.get(login.email)
     if not user or not pwd_context.verify(login.password, user["password"]):

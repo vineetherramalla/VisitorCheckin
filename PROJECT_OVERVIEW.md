@@ -232,7 +232,7 @@ src/services/
 - `submitVisitorForm()` - POST /api/visitors
 
 **Admin APIs:**
-- `adminLogin()` - POST /api/admin/login
+- `adminLogin()` - POST /api/login
 - `getVisitors()` - GET /api/admin/visitors (with query params)
 - `getVisitorById()` - GET /api/admin/visitors/:id
 - `deleteVisitor()` - DELETE /api/admin/visitors/:id

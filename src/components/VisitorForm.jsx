@@ -227,7 +227,7 @@ const VisitorForm = () => {
             {/* Host / Whom to Visit */}
             <div>
               <label htmlFor="host" className="block text-sm font-semibold text-gray-700 mb-2">
-                Whom to Visit <span className="text-gray-400 text-xs">(Optional)</span>
+                Whom to Visit <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />

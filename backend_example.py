@@ -175,7 +175,7 @@ async def create_visitor(visitor: VisitorCreate):
 
 # ==================== Admin Routes ====================
 
-@app.post("/api/admin/login", response_model=TokenResponse)
+@app.post("/api/login", response_model=TokenResponse)
 async def admin_login(login: AdminLogin):
     """
     Admin login endpoint
