@@ -54,7 +54,13 @@ const VisitorForm = () => {
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
     } else if (!phoneRegex.test(formData.phone.replace(/[\s-]/g, ''))) {
-      newErrors.phone = 'Invalid phone number (10-15 digits)';
+      newErrors.phone = 'Invalid phone number';
+    }
+
+    if (!formData.host.trim()) {
+      newErrors.host = 'Host name is required';
+    } else if (formData.host.trim().length < 2) {
+      newErrors.host = 'Host name must be at least 2 characters';
     }
 
     if (!formData.purpose) {
@@ -237,10 +243,11 @@ const VisitorForm = () => {
                   name="host"
                   value={formData.host}
                   onChange={handleChange}
-                  className="input-field pl-11"
+                  className={`input-field pl-11 ${errors.host ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                   placeholder="Host Name"
                 />
               </div>
+              {errors.host && <p className="mt-1 text-sm text-red-600">{errors.host}</p>}
             </div>
 
 
